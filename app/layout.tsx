@@ -59,7 +59,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Databuddy
-          clientId={process.env.NEXT_PUBLIC_DATABUDDY_CLIENT_ID!}
+          clientId="u0syca9wZFhc8JqnnlZVp"
           enableBatching={true}
           trackScreenViews={true} // Track page/route changes
           trackPerformance={true} // Track loading times
