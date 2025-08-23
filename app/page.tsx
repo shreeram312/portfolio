@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import Projects from "@/components/projects";
 import ExperienceSection from "@/components/experience";
 import GithubCalendarComponent from "@/components/github-calendar";
+import OpenSource from "@/components/open-source";
 
 export default function Portfolio() {
   return (
@@ -27,8 +28,9 @@ export default function Portfolio() {
         <hr className="border-gray-800 my-2 sm:my-4" />
         <Projects />
         <hr className="border-gray-800 my-2 sm:my-4" />
-        <Footer />
+        <OpenSource />
         <hr className="border-gray-800 my-2 sm:my-4" />
+        <Footer />
       </main>
     </div>
   );

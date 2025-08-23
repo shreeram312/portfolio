@@ -1,6 +1,27 @@
+import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 
 const ExperienceSection = () => {
+  // Function to calculate working months from December 2024 to current month
+  const calculateWorkingMonths = () => {
+    const startDate = new Date("2024-12-01");
+    const currentDate = new Date();
+
+    const yearDiff = currentDate.getFullYear() - startDate.getFullYear();
+    const monthDiff = currentDate.getMonth() - startDate.getMonth();
+
+    const totalMonths = yearDiff * 12 + monthDiff;
+
+    if (totalMonths === 0) {
+      return "1 month";
+    } else if (totalMonths === 1) {
+      return "1 month";
+    } else {
+      return `${totalMonths} months`;
+    }
+  };
+
   return (
     <div>
       <div className="mb-8 sm:mb-12">
@@ -13,9 +34,23 @@ const ExperienceSection = () => {
           {/* AXENTIA - Threaded roles */}
           <div>
             <div className="mb-3">
-              <h3 className="text-white font-semibold text-base sm:text-lg">
-                Axentia
-              </h3>
+              <Link href="https://axentia.in" target="_blank">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/axentia.png"
+                    alt="Axentia Logo"
+                    width={32}
+                    height={32}
+                    className="rounded-sm border border-gray-600"
+                  />
+                  <h3 className="text-white font-semibold text-base sm:text-lg">
+                    Axentia
+                  </h3>
+                </div>
+              </Link>
+              <p className="text-gray-500 text-xs sm:text-sm">
+                Total: {calculateWorkingMonths()} (Dec 2024 - Present)
+              </p>
             </div>
 
             {/* Timeline / thread */}
@@ -28,8 +63,8 @@ const ExperienceSection = () => {
                 {/* dot */}
 
                 <div className="mb-3">
-                  <p className="text-white font-medium text-sm sm:text-base">
-                    Software Development Engineer • Full-time
+                  <p className="text-cyan-400 font-medium text-sm sm:text-base">
+                    Software Development Engineer (SDE-1)
                   </p>
                   <p className="text-gray-400 text-xs sm:text-sm">
                     Currently Working
@@ -40,14 +75,29 @@ const ExperienceSection = () => {
                   <li className="flex items-start">
                     <span className="text-gray-500 mr-2">•</span>
                     <span>
-                      Building and maintaining production web apps end-to-end.
+                      Built RiskAssist end-to-end — an AI-powered compliance
+                      SaaS for CISOs and InfoSec teams.
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-gray-500 mr-2">•</span>
                     <span>
-                      Collaborating cross-functionally to ship features quickly
-                      and safely.
+                      Implemented RAG pipelines with custom-ingested vector DBs
+                      for frameworks like NIST, ISO, HIPAA, and SOC.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-gray-500 mr-2">•</span>
+                    <span>
+                      Integrated BlockNote editor for AI-assisted policy
+                      drafting, live editing, versioning, and exports.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-gray-500 mr-2">•</span>
+                    <span>
+                      Built Stripe credit-based payment system, Supabase auth,
+                      and PostgreSQL backend with Prisma ORM.
                     </span>
                   </li>
                 </ul>
@@ -58,8 +108,8 @@ const ExperienceSection = () => {
                 {/* dot */}
 
                 <div className="mb-3">
-                  <p className="text-white font-medium text-sm sm:text-base">
-                    Software Development Engineer Intern
+                  <p className="text-cyan-300/70 font-medium text-sm sm:text-base">
+                    Full Stack Developer(AI) Intern
                   </p>
                   <p className="text-gray-400 text-xs sm:text-sm">
                     Jan 2025 - July 2025 • 6 months
@@ -70,13 +120,22 @@ const ExperienceSection = () => {
                   <li className="flex items-start">
                     <span className="text-gray-500 mr-2">•</span>
                     <span>
-                      Built responsive UIs and contributed to core features.
+                      Built G.R.E.G end-to-end — an AI SaaS platform for
+                      immigration law firms with client dashboards.
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-gray-500 mr-2">•</span>
                     <span>
-                      Improved performance and DX through targeted refactors.
+                      Delivered RAG-powered case summarization, visa
+                      comparisons, AI-assisted drafting, and contextual chat.
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-gray-500 mr-2">•</span>
+                    <span>
+                      Integrated Supabase (auth + storage), PostgreSQL (via
+                      Prisma), LangChain pipelines, and Stripe subscriptions.
                     </span>
                   </li>
                 </ul>
@@ -87,7 +146,7 @@ const ExperienceSection = () => {
           {/* Previous company example (optional) */}
           <div className="border-l-2 border-gray-700 pl-4 sm:pl-6">
             <div className="mb-2">
-              <h3 className="text-white font-semibold text-base sm:text-lg">
+              <h3 className="text-cyan-300/70 font-semibold text-base sm:text-lg">
                 Frontend Developer Intern
               </h3>
               <p className="text-gray-400 text-sm sm:text-base">
@@ -95,16 +154,27 @@ const ExperienceSection = () => {
               </p>
               <p className="text-gray-500 text-xs sm:text-sm">4 months</p>
             </div>
-            <ul className="text-gray-300 text-sm sm:text-base space-y-1 sm:space-y-2 ml-4">
+            <ul className="text-gray-300 text-sm sm:text-base space-y-1 sm:space-y-2 ml-2">
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
                 <span>
-                  Built responsive UIs and implemented modern design patterns.
+                  Built a car rental service frontend in React with a
+                  responsive, modern UI.
                 </span>
               </li>
               <li className="flex items-start">
                 <span className="text-gray-500 mr-2">•</span>
-                <span>Optimized performance and improved UX.</span>
+                <span>
+                  Developed reusable components for booking flows, listings, and
+                  filters.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-gray-500 mr-2">•</span>
+                <span>
+                  Managed global and local state for seamless navigation and
+                  user interactions.
+                </span>
               </li>
             </ul>
           </div>

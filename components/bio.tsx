@@ -11,7 +11,7 @@ const Bio = () => {
       <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 text-gray-300 leading-relaxed text-sm sm:text-base">
         <p>
           I'm <span className="text-white font-semibold">Shreeram</span>, a
-          Software Devlopment Engineer(SDE-1){" "}
+          Software Development Engineer (SDE-1){" "}
           <a
             href="https://axentia.in"
             className="text-white font-semibold"
