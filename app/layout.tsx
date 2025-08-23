@@ -61,10 +61,15 @@ export default function RootLayout({
         <Databuddy
           clientId={process.env.NEXT_PUBLIC_DATABUDDY_CLIENT_ID!}
           enableBatching={true}
-          trackScreenViews
-          trackPerformance
-          trackWebVitals={true}
-          trackErrors={true}
+          trackScreenViews={true} // Track page/route changes
+          trackPerformance={true} // Track loading times
+          trackWebVitals={true} // Track Core Web Vitals
+          trackErrors={true} // Track JavaScript errors
+          // Optional tracking (enable as needed)
+          trackSessions={true} // Track user sessions
+          trackOutgoingLinks={false} // Track external link clicks
+          trackScrollDepth={false} // Track scroll behavior
+          trackEngagement={false} // Track user engagement
         />
         <GoogleAnalytics />
         {children}
