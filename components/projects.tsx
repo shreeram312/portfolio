@@ -38,7 +38,7 @@ const Projects = async () => {
 
   // Transform data to match expected format
   const transformedProjects =
-    projects?.map((project: any) => ({
+    projects?.map((project: Project) => ({
       _id: project._id || Math.random().toString(),
       title: project.title,
       subtitle: project.description,
