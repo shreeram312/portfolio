@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
 
 import React from "react";
 
@@ -30,12 +29,14 @@ const Bio = () => {
 
         <p>
           I still code with my bare hands in this{" "}
-          <span className="text-white font-semibold">"Vibe Code"</span> era —
-          yeah, I know it’s not the flashiest flex, but hey,
+          <span className="text-white font-semibold">
+            &ldquo;Vibe Code&rdquo;
+          </span>{" "}
+          era — yeah, I know it&apos;s not the flashiest flex, but hey,
           <br />
           <span className="text-white font-semibold">
-            someone’s gotta keep AI from taking my job. I still use AI for the
-            repetitive stuff 😉
+            someone&apos;s gotta keep AI from taking my job. I still use AI for
+            the repetitive stuff 😉
           </span>
         </p>
       </div>

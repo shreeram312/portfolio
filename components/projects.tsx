@@ -4,6 +4,18 @@ import { groq } from "next-sanity";
 import { ExternalLink } from "lucide-react";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+interface Project {
+  _id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  githubUrl: string;
+  projectUrl: string;
+  url: string;
+  img: string;
+}
 
 const Projects = async () => {
   let projects;
@@ -47,7 +59,7 @@ const Projects = async () => {
 
         <div className="space-y-4 sm:space-y-6">
           {transformedProjects.length > 0 ? (
-            transformedProjects.map((project: any) => (
+            transformedProjects.map((project: Project) => (
               <Card
                 key={project._id}
                 className="bg-black border border-gray-900 p-0 overflow-hidden hover:border-gray-600 transition-colors cursor-pointer"
@@ -56,9 +68,11 @@ const Projects = async () => {
                   <Link href={project.url} target="_blank">
                     <div className="w-full sm:w-48 h-32 bg-gray-800 flex-shrink-0">
                       {project.img ? (
-                        <img
+                        <Image
                           src={project.img}
                           alt={project.title}
+                          width={400}
+                          height={400}
                           className="w-full h-full object-cover"
                         />
                       ) : (
@@ -104,9 +118,6 @@ const Projects = async () => {
                         )}
                       </div>
                     </div>
-                    <p className="text-gray-300 text-xs sm:text-sm">
-                      {project.subtitle}
-                    </p>
                   </div>
                 </div>
               </Card>

@@ -9,7 +9,7 @@ const Footer = () => {
           @shreeram312
         </p>
         <p className="text-gray-400 text-xs sm:text-sm mb-1">
-          That's all, folks | Built with less headache...
+          That&apos;s all, folks | Built with less headache...
         </p>
         <p className="text-gray-400 text-xs sm:text-sm mb-2">
           © 2025 Shreeram Mutukundu. All rights reserved
