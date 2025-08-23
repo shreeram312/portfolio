@@ -15,6 +15,7 @@ interface Project {
   projectUrl: string;
   url: string;
   img: string;
+  subtitle: string;
 }
 
 const Projects = async () => {
@@ -38,7 +39,7 @@ const Projects = async () => {
 
   // Transform data to match expected format
   const transformedProjects =
-    projects?.map((project: Project) => ({
+    projects?.map((project: any) => ({
       _id: project._id || Math.random().toString(),
       title: project.title,
       subtitle: project.description,
@@ -118,6 +119,9 @@ const Projects = async () => {
                         )}
                       </div>
                     </div>
+                    <p className="text-gray-300 text-xs sm:text-sm">
+                      {project.subtitle}
+                    </p>
                   </div>
                 </div>
               </Card>
