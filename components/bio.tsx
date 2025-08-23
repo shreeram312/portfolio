@@ -3,6 +3,8 @@ import { Download } from "lucide-react";
 
 import React from "react";
 
+export const revalidate = 60;
+
 const Bio = () => {
   return (
     <div>
@@ -28,7 +30,7 @@ const Bio = () => {
 
         <p>
           I still code with my bare hands in this{" "}
-          <span className="text-white font-semibold">Vibe Code</span> era —
+          <span className="text-white font-semibold">"Vibe Code"</span> era —
           yeah, I know it’s not the flashiest flex, but hey,
           <br />
           <span className="text-white font-semibold">
@@ -38,9 +40,9 @@ const Bio = () => {
         </p>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
-        <Button className="bg-green-500 hover:bg-green-600 text-white rounded-full px-4 sm:px-6 text-sm sm:text-base">
-          🟢 Available for new opportunities
+      <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 mb-2 sm:mb-7">
+        <Button className="bg-green-600 hover:bg-green-500 text-white rounded-full px-4 sm:px-6 text-sm sm:text-base animate-bounce">
+          Available for new opportunities
         </Button>
         {/* <Button
           variant="outline"

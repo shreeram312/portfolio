@@ -6,6 +6,7 @@ import React from "react";
 const SocialLinks = () => {
   return (
     <div>
+      <h2 className="text-xl sm:text-2xl font-serif mb-2">Social Links</h2>
       <div className="mb-8 sm:mb-8">
         <p className="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
           Where to find me <span className="text-white">(digitally)</span> if
@@ -14,8 +15,7 @@ const SocialLinks = () => {
 
         <div className="flex flex-wrap gap-2 sm:gap-3">
           <Button
-            variant="outline"
-            className="border-gray-600 text-gray-300 hover:shadow-[0_0_0_2px_rgba(236,72,153,0.3)] rounded-lg bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
+            className="border border-gray-600 cursor-pointer text-gray-300 hover:shadow-[0_0_0_2px_rgba(59,130,246,0.5)] rounded-lg bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
             onClick={() =>
               window.open("mailto:shreerammutukundu.2003@gmail.com", "_blank")
             }
@@ -24,8 +24,7 @@ const SocialLinks = () => {
             Email Me
           </Button>
           <Button
-            variant="outline"
-            className="border-gray-600 text-gray-300 hover:shadow-[0_0_0_2px_rgba(34,197,94,0.3)] rounded-lg bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
+            className=" border border-gray-600 cursor-pointer text-gray-300 hover:shadow-[0_0_0_2px_rgba(34,197,94,0.5)] rounded-lg bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
             onClick={() =>
               window.open("https://x.com/realshreeram312", "_blank")
             }
@@ -34,8 +33,7 @@ const SocialLinks = () => {
             Twitter
           </Button>
           <Button
-            variant="outline"
-            className="border-gray-600 text-gray-300 hover:shadow-[0_0_0_2px_rgba(236,72,153,0.3)] rounded-lg bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
+            className=" border border-gray-600 cursor-pointer text-gray-300 hover:shadow-[0_0_0_2px_rgba(34,197,94,0.5)] rounded-lg bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
             onClick={() =>
               window.open("https://github.com/shreeram312", "_blank")
             }
@@ -44,8 +42,7 @@ const SocialLinks = () => {
             GitHub
           </Button>
           <Button
-            variant="outline"
-            className="border-gray-600 text-gray-300 hover:shadow-[0_0_0_2px_rgba(34,197,94,0.3)] rounded-lg bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
+            className=" border border-gray-600 cursor-pointer text-gray-300 hover:shadow-[0_0_0_2px_rgba(59,130,246,0.5)] rounded-lg bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
             onClick={() =>
               window.open(
                 "https://www.linkedin.com/in/shreeram-mutukundu-30094028a/",
@@ -57,8 +54,7 @@ const SocialLinks = () => {
             LinkedIn
           </Button>
           <Button
-            variant="outline"
-            className="border-gray-600 text-gray-300 hover:shadow-[0_0_0_2px_rgba(236,72,153,0.3)] rounded-lg bg-transparent text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
+            className="border border-gray-600 cursor-pointer text-gray-300 rounded-lg bg-transparent hover:shadow-[0_0_0_2px_rgba(251,191,36,0.5)] text-xs sm:text-sm px-3 sm:px-4 py-2 transition-all"
             onClick={() =>
               window.open("https://leetcode.com/shreeram312", "_blank")
             }
