@@ -96,7 +96,7 @@ const OpenSource = () => {
               </a>
             </div>
           </div>
-          <p className="text-gray-400 text-xs sm:text-sm">
+          {/* <p className="text-gray-400 text-xs sm:text-sm">
             Fun Fact: Founder & Maintainer of contentport.io is Josh Neske (
             Josh Tried Coding) ever heard of this guy? 😉👀{" "}
             <span className="text-blue-400 underline cursor-pointer">
@@ -104,7 +104,7 @@ const OpenSource = () => {
                 @joschan21
               </Link>
             </span>
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
