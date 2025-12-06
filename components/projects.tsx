@@ -18,6 +18,7 @@ interface Project {
   subtitle: string;
 }
 
+export const revalidate = 60;
 const Projects = async () => {
   let projects;
 
