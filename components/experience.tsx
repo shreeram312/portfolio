@@ -30,150 +30,150 @@ const ExperienceSection = () => {
           My professional journey
         </p>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {/* AXENTIA - Threaded roles */}
-          <div>
-            <div className="mb-3">
+          <div className="relative border-l-2 border-gray-800 pl-5 sm:pl-6">
+            {/* Start dot */}
+            <div className="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-cyan-400 border-2 border-black"></div>
+            {/* End dot */}
+            <div className="absolute -left-[5px] bottom-0 w-2 h-2 rounded-full bg-gray-600 border-2 border-black"></div>
+
+            <div className="mb-4">
               <Link href="https://axentia.in" target="_blank">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 group">
                   <Image
                     src="/axentia.png"
                     alt="Axentia Logo"
-                    width={32}
-                    height={32}
-                    className="rounded-sm border border-gray-600"
+                    width={28}
+                    height={28}
+                    className="rounded border border-gray-700 group-hover:border-gray-600 transition-colors"
                   />
-                  <h3 className="text-white font-semibold text-base sm:text-lg">
+                  <h3 className="text-white font-mono font-medium text-base sm:text-lg group-hover:text-cyan-400 transition-colors">
                     Axentia
                   </h3>
                 </div>
               </Link>
-              <p className="text-gray-500 text-xs sm:text-sm">
-                Total: {calculateWorkingMonths()} (Dec 2024 - Present)
+              <p className="text-gray-500 text-xs font-mono mt-1">
+                {calculateWorkingMonths()} • Dec 2024 - Present
               </p>
             </div>
 
-            {/* Timeline / thread */}
-            <div className="relative pl-8">
-              {/* vertical line */}
-              <div className="absolute left-3 top-0 h-full w-px bg-gray-700"></div>
-
-              {/* Full-time (current) */}
-              <div className="relative pb-8">
-                {/* dot */}
-
-                <div className="mb-3">
-                  <p className="text-cyan-400 font-medium text-sm sm:text-base">
-                    Software Development Engineer (SDE-1)
-                  </p>
-                  <p className="text-gray-400 text-xs sm:text-sm">
-                    Currently Working
-                  </p>
-                </div>
-
-                <ul className="text-gray-300 text-sm sm:text-base space-y-1 sm:space-y-2 ml-2">
-                  <li className="flex items-start">
-                    <span className="text-gray-500 mr-2">•</span>
-                    <span>
-                      Built RiskAssist end-to-end — an AI-powered compliance
-                      SaaS for CISOs and InfoSec teams.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-500 mr-2">•</span>
-                    <span>
-                      Implemented RAG pipelines with custom-ingested vector DBs
-                      for frameworks like NIST, ISO, HIPAA, and SOC.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-500 mr-2">•</span>
-                    <span>
-                      Integrated BlockNote editor for AI-assisted policy
-                      drafting, live editing, versioning, and exports.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-500 mr-2">•</span>
-                    <span>
-                      Built Stripe credit-based payment system, Supabase auth,
-                      and PostgreSQL backend with Prisma ORM.
-                    </span>
-                  </li>
-                </ul>
+            {/* Full-time (current) */}
+            <div className="mb-5">
+              <div className="mb-2">
+                <p className="text-cyan-400 font-mono font-medium text-sm">
+                  Software Development Engineer (SDE-1)
+                </p>
+                <p className="text-gray-500 text-xs font-mono">
+                  Currently Working
+                </p>
               </div>
 
-              {/* Internship (previous) */}
-              <div className="relative">
-                {/* dot */}
+              <ul className="text-gray-300 text-xs sm:text-sm space-y-1 leading-relaxed">
+                <li className="flex items-start">
+                  <span className="text-gray-500 mr-2 mt-0.5">•</span>
+                  <span>
+                    Built RiskAssist end-to-end — an AI-powered compliance SaaS
+                    for CISOs and InfoSec teams
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-gray-500 mr-2 mt-0.5">•</span>
+                  <span>
+                    Implemented RAG pipelines with custom-ingested vector DBs
+                    for frameworks like NIST, ISO, HIPAA, and SOC
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-gray-500 mr-2 mt-0.5">•</span>
+                  <span>
+                    Integrated BlockNote editor for AI-assisted policy drafting,
+                    live editing, versioning, and exports
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-gray-500 mr-2 mt-0.5">•</span>
+                  <span>
+                    Built Stripe credit-based payment system, Supabase auth, and
+                    PostgreSQL backend with Prisma ORM
+                  </span>
+                </li>
+              </ul>
+            </div>
 
-                <div className="mb-3">
-                  <p className="text-cyan-300/70 font-medium text-sm sm:text-base">
-                    Full Stack Developer(AI) Intern
-                  </p>
-                  <p className="text-gray-400 text-xs sm:text-sm">
-                    Jan 2025 - July 2025 • 6 months
-                  </p>
-                </div>
-
-                <ul className="text-gray-300 text-sm sm:text-base space-y-1 sm:space-y-2 ml-2">
-                  <li className="flex items-start">
-                    <span className="text-gray-500 mr-2">•</span>
-                    <span>
-                      Built G.R.E.G end-to-end — an AI SaaS platform for
-                      immigration law firms with client dashboards.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-500 mr-2">•</span>
-                    <span>
-                      Delivered RAG-powered case summarization, visa
-                      comparisons, AI-assisted drafting, and contextual chat.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-gray-500 mr-2">•</span>
-                    <span>
-                      Integrated Supabase (auth + storage), PostgreSQL (via
-                      Prisma), LangChain pipelines, and Stripe subscriptions.
-                    </span>
-                  </li>
-                </ul>
+            {/* Internship (previous) */}
+            <div className="pt-3 border-t border-gray-800">
+              <div className="mb-2">
+                <p className="text-cyan-300/70 font-mono font-medium text-sm">
+                  Full Stack Developer (AI) Intern
+                </p>
+                <p className="text-gray-500 text-xs font-mono">
+                  Dec 2024 - May 2025 • 6 months
+                </p>
               </div>
+
+              <ul className="text-gray-300 text-xs sm:text-sm space-y-1 leading-relaxed">
+                <li className="flex items-start">
+                  <span className="text-gray-500 mr-2 mt-0.5">•</span>
+                  <span>
+                    Built G.R.E.G end-to-end — an AI SaaS platform for
+                    immigration law firms with client dashboards
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-gray-500 mr-2 mt-0.5">•</span>
+                  <span>
+                    Delivered RAG-powered case summarization, visa comparisons,
+                    AI-assisted drafting, and contextual chat
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-gray-500 mr-2 mt-0.5">•</span>
+                  <span>
+                    Integrated Supabase (auth + storage), PostgreSQL (via
+                    Prisma), LangChain pipelines, and Stripe subscriptions
+                  </span>
+                </li>
+              </ul>
             </div>
           </div>
 
-          {/* Previous company example (optional) */}
-          <div className="border-l-2 border-gray-700 pl-4 sm:pl-6">
+          {/* Previous company */}
+          <div className="relative border-l-2 border-gray-800 pl-5 sm:pl-6">
+            {/* Start dot */}
+            <div className="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-cyan-300/70 border-2 border-black"></div>
+            {/* End dot */}
+            <div className="absolute -left-[5px] bottom-0 w-2 h-2 rounded-full bg-gray-600 border-2 border-black"></div>
+
             <div className="mb-2">
-              <h3 className="text-cyan-300/70 font-semibold text-base sm:text-lg">
+              <h3 className="text-cyan-300/70 font-mono font-medium text-sm sm:text-base">
                 Frontend Developer Intern
               </h3>
-              <p className="text-gray-400 text-sm sm:text-base">
+              <p className="text-gray-400 text-xs sm:text-sm font-mono">
                 DigiMedia Solutions
               </p>
-              <p className="text-gray-500 text-xs sm:text-sm">4 months</p>
+              <p className="text-gray-500 text-xs font-mono">4 months</p>
             </div>
-            <ul className="text-gray-300 text-sm sm:text-base space-y-1 sm:space-y-2 ml-2">
+            <ul className="text-gray-300 text-xs sm:text-sm space-y-1 leading-relaxed">
               <li className="flex items-start">
-                <span className="text-gray-500 mr-2">•</span>
+                <span className="text-gray-500 mr-2 mt-0.5">•</span>
                 <span>
                   Built a car rental service frontend in React with a
-                  responsive, modern UI.
+                  responsive, modern UI
                 </span>
               </li>
               <li className="flex items-start">
-                <span className="text-gray-500 mr-2">•</span>
+                <span className="text-gray-500 mr-2 mt-0.5">•</span>
                 <span>
                   Developed reusable components for booking flows, listings, and
-                  filters.
+                  filters
                 </span>
               </li>
               <li className="flex items-start">
-                <span className="text-gray-500 mr-2">•</span>
+                <span className="text-gray-500 mr-2 mt-0.5">•</span>
                 <span>
                   Managed global and local state for seamless navigation and
-                  user interactions.
+                  user interactions
                 </span>
               </li>
             </ul>

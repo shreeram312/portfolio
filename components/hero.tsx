@@ -2,7 +2,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Github, Twitter, Linkedin, Link2, Mail, Calendar } from "lucide-react";
+import {
+  Github,
+  Twitter,
+  Linkedin,
+  Link2,
+  Mail,
+  Calendar,
+  FileText,
+} from "lucide-react";
 
 const Hero = () => {
   return (
@@ -13,7 +21,7 @@ const Hero = () => {
         <div className="relative w-full rounded-2xl overflow-hidden mb-6">
           <div className="relative h-[150px] sm:h-[220px] md:h-[240px] w-full">
             <Image
-              src="/view.jpg"
+              src="https://wallpapershome.com/images/pages/pic_h/8164.jpg"
               alt="Atmospheric mountain landscape"
               fill
               priority
@@ -24,16 +32,16 @@ const Hero = () => {
             />
 
             {/* Vignette + corner darkening for more realistic depth */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_22%,rgba(0,0,0,0.55)_70%,rgba(0,0,0,0.96)_100%)]" />
+            {/* <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,transparent_22%,rgba(0,0,0,0.55)_70%,rgba(0,0,0,0.96)_100%)]" /> */}
             {/* Subtle vertical darkening */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/80" />
+            {/* <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/80" /> */}
             {/* Left & right edge dark patches */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-transparent to-transparent" />
+            {/* <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-transparent to-transparent" /> */}
 
-            {/* Text overlay centered */}
-            <div className="absolute inset-0 flex items-center justify-center z-10">
-              <p className="text-sm sm:text-md md:text-lg font-serif italic tracking-wide text-white/90 drop-shadow-2xl">
+            {/* Text overlay left aligned */}
+            <div className="absolute inset-0 flex items-center justify-start z-2 pl-18 pr-10 sm:pl-72">
+              <p className="hidden sm:block sm:text-md md:text-lg font-serif italic tracking-wide text-white/90 drop-shadow-2xl">
                 One Commit at a Time
               </p>
             </div>
@@ -63,12 +71,25 @@ const Hero = () => {
                   Shreeram Mutukundu
                 </h1>
                 <p className="text-xs sm:text-sm text-gray-400 tracking-wide">
-                  21 • Engineer
+                  22 • Engineer
+                </p>
+                <p className="text-xs sm:text-sm text-gray-400 tracking-wide mt-0.5">
+                  Pune, India
                 </p>
               </div>
 
               {/* Social Links - Right aligned */}
-              <div className="flex items-center gap-3 sm:gap-4 sm:pt-2 sm:mx-3">
+              <div className="flex items-center gap-3 sm:gap-4 sm:pt-2 sm:mx-3 flex-wrap">
+                <Link
+                  href="https://drive.google.com/file/d/1LC59qeT7ymWzy_zZXiIIeDW9c0Abi9oC/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-gray-400 hover:text-white transition-colors"
+                  aria-label="Resume"
+                >
+                  <FileText size={20} />
+                  <span className="text-xs sm:text-sm font-mono">Resume</span>
+                </Link>
                 <Link
                   href="https://github.com/shreeram312"
                   target="_blank"
@@ -77,6 +98,7 @@ const Hero = () => {
                 >
                   <Github size={20} />
                 </Link>
+
                 <Link
                   href="https://x.com/realshreeram312"
                   target="_blank"
@@ -107,13 +129,13 @@ const Hero = () => {
             {/* Bio Section */}
             <div className="mt-4 sm:mt-6">
               <p className="text-base sm:text-md text-gray-300 leading-relaxed">
-                I&apos;m Shreeram, a Software Development Engineer (SDE-1)
-                @Axentia living in Pune, India.{" "}
+                I&apos;m Shreeram, an Full Stack AI Engineer at Axentia in Pune.
+                I love debugging and{" "}
                 <span className="text-white font-semibold">
-                  I love both Developing & Debugging Code
+                  figuring things out quickly
                 </span>
-                . Turning ideas into reality through clean code and thoughtful
-                design. Building products that matter, one commit at a time.
+                . There&apos;s something satisfying about shipping and building
+                things end to end.
               </p>
 
               {/* Action Buttons */}

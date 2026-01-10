@@ -1,6 +1,7 @@
 import React from "react";
-import { ExternalLink, Github, Code, Shield } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { Card } from "@/components/ui/card";
 
 const OpenSource = () => {
   return (
@@ -13,99 +14,81 @@ const OpenSource = () => {
           My contributions to the community
         </p>
 
-        <div className="space-y-6">
-          {/* ContentPort.io Contribution */}
-          <div className="border-l-2 border-gray-700 pl-4 sm:pl-6">
-            <div className="mb-3">
-              <Link href="https://contentport.io" target="_blank">
-                <h3 className="text-white font-semibold text-base sm:text-lg">
-                  contentport.io
-                </h3>
-              </Link>
-              <p className="text-gray-400 text-sm sm:text-base">
-                Contentport helps you create, schedule & manage twitter content
-                at scale. Perfect for busy founders & content managers.
-              </p>
-              <p className="text-gray-500 text-xs sm:text-sm">
-                Open Source Contribution
-              </p>
-            </div>
+        <Card className="bg-black border border-gray-800 p-0 overflow-hidden hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/50">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
+            {/* Image Section */}
+            <Link
+              href="https://contentport.io"
+              target="_blank"
+              className="lg:col-span-2"
+            >
+              <div className="relative w-full h-48 sm:h-56 lg:h-full bg-gray-900 overflow-hidden group">
+                <Image
+                  src="/image.png"
+                  alt="Contentport.io"
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              </div>
+            </Link>
 
-            <div className="space-y-3">
-              {/* Server Component & Auth */}
-              <div className="flex items-start gap-3">
-                <div className="mt-1">
-                  <Shield className="w-4 h-4 text-gray-400" />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium text-sm sm:text-base">
-                    Server Component & Authentication
-                  </h4>
+            {/* Content Section */}
+            <div className="lg:col-span-3 p-5 sm:p-6">
+              <div className="mb-4">
+                <Link href="https://contentport.io" target="_blank">
+                  <h3 className="text-gray-100 font-mono font-medium text-lg sm:text-xl hover:text-blue-300 transition-colors mb-2">
+                    contentport.io
+                  </h3>
+                </Link>
+                <p className="text-gray-400 text-xs sm:text-sm mb-3">
+                  A content engine for growing on Twitter. Helps you create,
+                  schedule and manage twitter content at scale.
+                </p>
+                <p className="text-gray-500 text-xs font-mono">
+                  Open Source Contribution
+                </p>
+              </div>
+
+              {/* Contributions List */}
+              <div className="space-y-3 mb-4">
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 text-xs mt-1">•</span>
                   <p className="text-gray-300 text-xs sm:text-sm">
                     Added server component functionality and fixed
-                    authentication redirects. Previously, existing users were
-                    forced to login again. Implemented cookie checking to
-                    redirect authenticated users directly to /studio page.
+                    authentication redirects for seamless user experience
                   </p>
                 </div>
-              </div>
 
-              {/* Edge Case Handling */}
-              <div className="flex items-start gap-3">
-                <div className="mt-1">
-                  <Code className="w-4 h-4 text-gray-400" />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium text-sm sm:text-base">
-                    Edge Case Management
-                  </h4>
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 text-xs mt-1">•</span>
                   <p className="text-gray-300 text-xs sm:text-sm">
-                    Enhanced tweet posting functionality with comprehensive edge
-                    case checks. Added proper error handling and validation to
-                    prevent posting failures.
+                    Enhanced tweet posting with comprehensive edge case handling
+                    and error validation
                   </p>
                 </div>
-              </div>
 
-              {/* UI/UX Improvements */}
-              <div className="flex items-start gap-3">
-                <div className="mt-1">
-                  <ExternalLink className="w-4 h-4 text-gray-400" />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium text-sm sm:text-base">
-                    UI/UX Enhancements
-                  </h4>
+                <div className="flex items-start gap-2">
+                  <span className="text-gray-400 text-xs mt-1">•</span>
                   <p className="text-gray-300 text-xs sm:text-sm">
-                    Implemented minor UI/UX improvements to enhance user
-                    experience and interface consistency across the platform.
+                    Implemented UI/UX improvements for better interface
+                    consistency
                   </p>
                 </div>
               </div>
-            </div>
 
-            <div className="mt-4">
+              {/* GitHub Link */}
               <a
                 href="https://github.com/joschan21/contentport"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+                className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm font-mono"
               >
-                <Github className="w-4 h-4" />
-                View Project on GitHub
+                View on GitHub →
               </a>
             </div>
           </div>
-          {/* <p className="text-gray-400 text-xs sm:text-sm">
-            Fun Fact: Founder & Maintainer of contentport.io is Josh Neske (
-            Josh Tried Coding) ever heard of this guy? 😉👀{" "}
-            <span className="text-blue-400 underline cursor-pointer">
-              <Link href="https://github.com/joschan21" target="_blank">
-                @joschan21
-              </Link>
-            </span>
-          </p> */}
-        </div>
+        </Card>
       </div>
     </div>
   );

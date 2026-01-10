@@ -14,7 +14,7 @@ const Skills = () => {
         <p className="text-gray-300 mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
           These are the technologies I&apos;ve learned and worked with. This
           list is constantly evolving as I continue to learn and grow as a
-          developer.
+          Engineer.
         </p>
 
         {/* LANGUAGES */}
@@ -53,7 +53,7 @@ const Skills = () => {
               />
               Python
             </Badge>
-            <Badge className="bg-[#1a1a1a] text-white flex items-center gap-2 px-3 py-2 text-sm">
+            {/* <Badge className="bg-[#1a1a1a] text-white flex items-center gap-2 px-3 py-2 text-sm">
               <Image
                 src="/java.png"
                 width={16}
@@ -62,7 +62,7 @@ const Skills = () => {
                 className="w-4 h-4"
               />
               Java
-            </Badge>
+            </Badge> */}
           </div>
         </div>
 
@@ -112,6 +112,16 @@ const Skills = () => {
               />
               TanStack Query
             </Badge>
+            <Badge className="bg-[#1a1a1a] text-white flex items-center gap-2 px-3 py-2 text-sm">
+              <Image
+                src="/expo.png"
+                width={16}
+                height={16}
+                alt="Expo"
+                className="w-4 h-4"
+              />
+              Expo(React native)
+            </Badge>
           </div>
         </div>
 
@@ -151,6 +161,16 @@ const Skills = () => {
               />
               NestJS
             </Badge>
+            <Badge className="bg-[#1a1a1a] text-blue-400 flex items-center gap-2 px-3 py-2 text-sm">
+              <Image
+                src="/trpc.png"
+                width={16}
+                height={16}
+                alt="tRPC"
+                className="w-4 h-4"
+              />
+              tRPC
+            </Badge>
           </div>
         </div>
 
@@ -189,6 +209,26 @@ const Skills = () => {
                 className="w-4 h-4"
               />
               Prisma
+            </Badge>
+            <Badge className="bg-[#1a1a1a] text-blue-400 flex items-center gap-2 px-3 py-2 text-sm">
+              <Image
+                src="/drizzle.png"
+                width={16}
+                height={16}
+                alt="Drizzle"
+                className="w-4 h-4"
+              />
+              Drizzle
+            </Badge>
+            <Badge className="bg-[#1a1a1a] text-red-400 flex items-center gap-2 px-3 py-2 text-sm">
+              <Image
+                src="/redis.png"
+                width={16}
+                height={16}
+                alt="Redis"
+                className="w-4 h-4"
+              />
+              Redis
             </Badge>
           </div>
         </div>
@@ -267,6 +307,16 @@ const Skills = () => {
                 className="w-4 h-4"
               />
               Vercel
+            </Badge>
+            <Badge className="bg-[#1a1a1a] text-cyan-400 flex items-center gap-2 px-3 py-2 text-sm">
+              <Image
+                src="/turborepo.jpg"
+                width={16}
+                height={16}
+                alt="Turborepo"
+                className="w-4 h-4"
+              />
+              Turborepo
             </Badge>
           </div>
         </div>

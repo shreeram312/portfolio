@@ -65,7 +65,7 @@ const Profile = () => {
             Shreeram Mutukundu
           </h1>
           <p className="text-sm text-gray-400 mt-1 font-mono">
-            21 • engineer • developer • builder
+            22 • engineer • developer • builder
           </p>
         </div>
 
