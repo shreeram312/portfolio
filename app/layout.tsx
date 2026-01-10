@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import GoogleAnalytics from "@/components/google-analytics";
-import { Databuddy } from "@databuddy/sdk";
 
 import "./globals.css";
+import { Databuddy } from "@databuddy/sdk/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,15 +65,15 @@ export default function RootLayout({
         <Databuddy
           clientId="u0syca9wZFhc8JqnnlZVp"
           enableBatching={true}
-          trackScreenViews={true} // Track page/route changes
+          // trackScreenViews={true} // Track page/route changes
           trackPerformance={true} // Track loading times
           trackWebVitals={true} // Track Core Web Vitals
           trackErrors={true} // Track JavaScript errors
           // Optional tracking (enable as needed)
-          trackSessions={true} // Track user sessions
+          // trackSessions={true} // Track user sessions
           trackOutgoingLinks={false} // Track external link clicks
           trackScrollDepth={false} // Track scroll behavior
-          trackEngagement={false} // Track user engagement
+          // trackEngagement={false} // Track user engagement
         />
         <GoogleAnalytics />
         {children}
