@@ -22,7 +22,7 @@ export const openSource: OpenSourceEntry[] = [
     url: "https://contentport.io",
     github: "https://github.com/joschan21/contentport",
     description:
-      "A content engine for growing on Twitter — create, schedule and manage content at scale.",
+      "A content engine for growing on Twitter: create, schedule and manage content at scale.",
     image: "/image.png",
     contributions: [
       {

@@ -10,7 +10,7 @@ export type Role = {
   /** One-line summary shown above the bullets (or instead of them). */
   summary?: string;
   bullets: string[];
-  /** Tech used in this role — rendered as chips. */
+  /** Tech used in this role, rendered as chips. */
   stack: string[];
 };
 
@@ -39,9 +39,9 @@ export const experience: Experience[] = [
         start: "2026-02",
         end: "present",
         bullets: [
-          "Added multi-branch support — migrated Koko from single-clinic to multi-branch without disruption.",
+          "Added multi-branch support, migrating Koko from single-clinic to multi-branch without disruption.",
           "Integrated Porter and Shadowfax so clinics can deliver medicines and products to pet parents' doorsteps.",
-          "Built the koko.vet booking widget — an agentic flow that books appointments and confirms via push and WhatsApp.",
+          "Built the koko.vet booking widget: an agentic flow that books appointments and confirms via push and WhatsApp.",
           "Built most of the admin web app (demo.koko.vet) and Pet Parent mobile app screens, shipping features across the backend services.",
         ],
         stack: [
@@ -62,7 +62,7 @@ export const experience: Experience[] = [
     company: "Axentia",
     url: "https://axentia.in",
     logo: "/axentia.png",
-    tagline: "AI product studio — LLM, RAG and agent apps for B2B and education",
+    tagline: "AI product studio: LLM, RAG and agent apps for B2B and education",
     location: "Pune, India",
     roles: [
       {
@@ -71,10 +71,10 @@ export const experience: Experience[] = [
         start: "2025-06",
         end: "2026-02",
         bullets: [
-          "Transcript Genie (transcriptgenie.com) — AI GPA-conversion platform for university admissions: bulk, queue-based transcript processing with a custom Azure document-extraction model.",
-          "Clauseborne — legal-tech workflows for debt and consumer-law issues, from drafting responses to debt-collection lawsuits to flagging FDCPA/FCRA violations.",
+          "Transcript Genie (transcriptgenie.com): AI GPA-conversion platform for university admissions: bulk, queue-based transcript processing with a custom Azure document-extraction model.",
+          "Clauseborne: legal-tech workflows for debt and consumer-law issues, from drafting responses to debt-collection lawsuits to flagging FDCPA/FCRA violations.",
           // TODO(shreeram): add a line on what you built here.
-          "We’re Not Really Strangers — app version of the conversation card game.",
+          "We’re Not Really Strangers: app version of the conversation card game.",
           "Shipped RAG, AI-agent and streaming-chat features, plus Stripe credit-based pricing, across the products.",
         ],
         stack: [
@@ -94,7 +94,7 @@ export const experience: Experience[] = [
         start: "2024-12",
         end: "2025-05",
         bullets: [
-          "Built G.R.E.G end-to-end — an AI SaaS platform for immigration law firms with client dashboards.",
+          "Built G.R.E.G end to end, an AI SaaS platform for immigration law firms with client dashboards.",
           "Delivered RAG-powered case summarisation, visa comparisons, AI-assisted drafting and contextual chat.",
           "Integrated Supabase (auth + storage), PostgreSQL via Prisma, LangChain pipelines and Stripe subscriptions.",
         ],
@@ -109,7 +109,7 @@ export const experience: Experience[] = [
       {
         title: "Frontend Developer Intern",
         type: "Internship",
-        // TODO(shreeram): confirm the exact months — the old site only said "4 months".
+        // TODO(shreeram): confirm the exact months; the old site only said "4 months".
         start: "2024-07",
         end: "2024-10",
         bullets: [

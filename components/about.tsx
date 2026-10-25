@@ -24,7 +24,7 @@ export function About() {
             <span aria-hidden className="mt-[0.6em] size-1.5 shrink-0 rounded-full bg-line-strong" />
             <p>
               Before that I built <span className="prose-link">LLM, RAG and agent apps</span> at
-              Axentia — Transcript Genie, Clauseborne and more — end to end, from vector
+              Axentia (Transcript Genie, Clauseborne and more), end to end, from vector
               indexes and job queues to billing. The satisfying part is watching the whole
               thing come together.
             </p>

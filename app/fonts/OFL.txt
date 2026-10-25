@@ -1,0 +1,2 @@
+Instrument Serif is licensed under the SIL Open Font License 1.1.
+https://github.com/googlefonts/instrument-serif/blob/main/OFL.txt

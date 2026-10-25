@@ -28,7 +28,7 @@ function companySpan(entry: ExperienceEntry): {
         .filter((e): e is Exclude<MonthOrPresent, "present"> => e !== "present")
         .sort((a, b) => parseMonth(b).getTime() - parseMonth(a).getTime())[0];
   return {
-    range: `${formatMonth(start)} — ${formatMonth(end)}`,
+    range: `${formatMonth(start)} – ${formatMonth(end)}`,
     duration: formatDuration(monthsBetween(start, end)),
     current,
   };

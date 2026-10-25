@@ -1,4 +1,4 @@
-# shreeram.dev — portfolio
+# shreeram.dev portfolio
 
 Personal portfolio built with Next.js 15, React 19, Tailwind CSS v4 and Sanity.
 
@@ -34,7 +34,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ### Audio
 
-The header/dock music button loops `public/audio/theme.mp3`. The file isn't in the repo — add a track you have the rights to (anime OSTs are copyrighted; use a licensed or royalty-free piece). Until the file exists the button shows as disabled. Title and path live in `data/profile.ts` under `audio`.
+The header/dock music button loops `public/audio/theme.mp3`. The file isn't in the repo; add a track you have the rights to (anime OSTs are copyrighted; use a licensed or royalty-free piece). Until the file exists the button shows as disabled. Title and path live in `data/profile.ts` under `audio`.
 
 ### Environment
 

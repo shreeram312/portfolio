@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { Databuddy } from "@databuddy/sdk/react";
 import GoogleAnalytics from "@/components/google-analytics";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeBootScript } from "@/components/theme-boot-script";
+import { scheduledTheme } from "@/lib/theme-schedule";
 import { profile } from "@/data/profile";
 
 import "./globals.css";
@@ -27,8 +29,8 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(profile.siteUrl),
   title: {
-    default: `${profile.name} — ${profile.roles[0]}`,
-    template: `%s — ${profile.name}`,
+    default: `${profile.name} · ${profile.roles[0]}`,
+    template: `%s · ${profile.name}`,
   },
   description: `${profile.name}'s portfolio. ${profile.roles[0]} from ${profile.location.city}, ${profile.location.country}.`,
   keywords: [
@@ -84,10 +86,13 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
+      <head>
+        <ThemeBootScript />
+      </head>
       <body className="flex min-h-full flex-col overflow-x-hidden">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme={scheduledTheme()}
           enableSystem={false}
           disableTransitionOnChange
         >

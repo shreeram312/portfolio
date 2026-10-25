@@ -16,7 +16,7 @@ type Props = {
 
 /**
  * Looping background track with a tiny equaliser while playing.
- * Nothing autoplays — browsers block it anyway — the visitor opts in.
+ * Nothing autoplays (browsers block it anyway); the visitor opts in.
  * If the file is missing the button disables itself and says so.
  */
 export function AudioToggle({ src, title, variant = "header", className }: Props) {

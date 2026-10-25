@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { skillCategories, skills } from "@/data/skills";
 import { Section } from "@/components/frame";
 import { BrandIcon, Monogram } from "@/components/brand-icon";
@@ -29,6 +30,16 @@ export function Skills() {
                   >
                     {skill.icon ? (
                       <BrandIcon icon={skill.icon} className="size-3.5" />
+                    ) : skill.lucide ? (
+                      <skill.lucide className="size-3.5 shrink-0 text-brand" aria-hidden />
+                    ) : skill.image ? (
+                      <Image
+                        src={skill.image}
+                        alt=""
+                        width={28}
+                        height={28}
+                        className="size-3.5 shrink-0 rounded-[3px] object-cover"
+                      />
                     ) : (
                       <Monogram name={skill.name} className="size-3.5" />
                     )}

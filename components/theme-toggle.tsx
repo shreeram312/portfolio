@@ -5,8 +5,18 @@ import { flushSync } from "react-dom";
 import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { OVERRIDE_KEY } from "@/components/theme-boot-script";
 
 const DURATION_MS = 450;
+
+/** Remember a manual toggle so it beats the time-based default for a while. */
+function rememberOverride(theme: "light" | "dark") {
+  try {
+    localStorage.setItem(OVERRIDE_KEY, JSON.stringify({ theme, at: Date.now() }));
+  } catch {
+    /* storage unavailable */
+  }
+}
 
 export function ThemeToggle({ className }: { className?: string }) {
   const { resolvedTheme, setTheme } = useTheme();
@@ -26,6 +36,7 @@ export function ThemeToggle({ className }: { className?: string }) {
    */
   const toggle = useCallback(() => {
     const next = isDark ? "light" : "dark";
+    rememberOverride(next);
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (typeof document.startViewTransition !== "function" || reduced) {

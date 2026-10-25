@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const GLYPHS = "!<>-_\\/[]{}—=+*^?#░▒▓";
+const GLYPHS = "!<>-_\\/[]{}=+*^?#░▒▓";
 
 type Props = {
   lines: readonly string[];

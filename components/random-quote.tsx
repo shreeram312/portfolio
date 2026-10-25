@@ -32,7 +32,7 @@ export function RandomQuote({ quotes }: { quotes: Quote[] }) {
             &ldquo;{quote.text}&rdquo;
           </p>
           <figcaption className="mt-3 flex items-center justify-center gap-2 font-mono text-[11px] uppercase tracking-wider text-muted-foreground/80">
-            <span>— {quote.source}</span>
+            <span>{quote.source}</span>
             <button
               type="button"
               onClick={() => setIndex((i) => pick(i))}

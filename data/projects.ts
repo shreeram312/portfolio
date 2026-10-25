@@ -34,7 +34,7 @@ export const fallbackProjects: Project[] = [
     title: "G.R.E.G",
     tagline: "AI workspace for immigration law firms.",
     description:
-      "Client dashboards, RAG-powered case summarisation, visa comparisons, AI-assisted drafting and contextual chat — built end-to-end with Supabase, Prisma and Stripe subscriptions.",
+      "Client dashboards, RAG-powered case summarisation, visa comparisons, AI-assisted drafting and contextual chat, built end to end with Supabase, Prisma and Stripe subscriptions.",
     stack: ["Next.js", "Supabase", "PostgreSQL", "Prisma", "LangChain", "Stripe"],
     status: "live",
     featured: true,

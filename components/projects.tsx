@@ -93,7 +93,7 @@ export async function Projects() {
         </div>
       ) : (
         <p className="py-8 text-center text-sm text-muted-foreground">
-          No projects yet — add some in <code className="font-mono">/studio</code>.
+          No projects yet. Add some in <code className="font-mono">/studio</code>.
         </p>
       )}
     </Section>

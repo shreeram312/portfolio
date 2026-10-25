@@ -24,6 +24,7 @@ import {
   siTypescript,
   siVercel,
 } from "simple-icons";
+import { Bot, FileSearch, type LucideIcon } from "lucide-react";
 import type { BrandIconData } from "@/components/brand-icon";
 
 export const skillCategories = [
@@ -33,20 +34,24 @@ export const skillCategories = [
   "Database",
   "AI",
   "DevOps & Tools",
-  "Payments",
+  "Third-party Integrations",
 ] as const;
 
 export type SkillCategory = (typeof skillCategories)[number];
 
 export type Skill = {
   name: string;
-  /** Brand icon from `simple-icons`. Omit to show a two-letter monogram instead. */
+  /** Brand icon from `simple-icons`. */
   icon?: BrandIconData;
+  /** Raster logo under /public, for brands simple-icons doesn't have. */
+  image?: string;
+  /** Concept icon from lucide, for skills that aren't a brand (RAG, agents…). */
+  lucide?: LucideIcon;
   category: SkillCategory;
 };
 
 /**
- * Add a skill by pushing to this list. Icons come from https://simpleicons.org —
+ * Add a skill by pushing to this list. Icons come from https://simpleicons.org:
  * import `si<Name>` from "simple-icons" (e.g. siGo, siRabbitmq).
  */
 export const skills: Skill[] = [
@@ -72,6 +77,8 @@ export const skills: Skill[] = [
   { name: "Redis", icon: siRedis, category: "Database" },
   // AI
   { name: "Vercel AI SDK", category: "AI" },
+  { name: "RAG", lucide: FileSearch, category: "AI" },
+  { name: "Agentic AI", lucide: Bot, category: "AI" },
   // DevOps & tools
   { name: "Docker", icon: siDocker, category: "DevOps & Tools" },
   { name: "Linux", icon: siLinux, category: "DevOps & Tools" },
@@ -80,6 +87,8 @@ export const skills: Skill[] = [
   { name: "Postman", icon: siPostman, category: "DevOps & Tools" },
   { name: "Vercel", icon: siVercel, category: "DevOps & Tools" },
   { name: "Turborepo", icon: siTurborepo, category: "DevOps & Tools" },
-  // Payments
-  { name: "Stripe", icon: siStripe, category: "Payments" },
+  // Third-party integrations
+  { name: "Stripe", icon: siStripe, category: "Third-party Integrations" },
+  { name: "Porter API", image: "/porter.jpg", category: "Third-party Integrations" },
+  { name: "Shadowfax API", image: "/shadowfax.png", category: "Third-party Integrations" },
 ];

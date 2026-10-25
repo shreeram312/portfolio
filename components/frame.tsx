@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
  * Blueprint frame primitives.
  *
  * The page is an 896px column with dashed vertical rails. Sections are
- * separated by full-bleed dashed rules and a thin hatched "band" — the
+ * separated by full-bleed dashed rules and a thin hatched "band": the
  * horizontal lines run edge-to-edge across the viewport while the content
  * stays inside the column. Small crosshairs mark where rules meet the rails.
  */
 
-/** Shared column width — keep in sync with the header. */
+/** Shared column width. Keep in sync with the header. */
 export const COLUMN = "max-w-4xl";
 
 /** Centered column with dashed rails on both sides. */

@@ -40,10 +40,22 @@ export const profile = {
    * Background track for the header/dock audio toggle. Drop a file you have the
    * rights to at public/audio/theme.mp3 (e.g. a licensed AoT-inspired piece).
    */
-  audio: { src: "/audio/theme.mp3", title: "AoT theme" },
+  audio: { src: "/audio/theme.mp3", title: "Theme" },
+  /**
+   * Default theme follows the clock in this time zone: dark from darkFromHour
+   * until darkUntilHour (18 → 6 = evening and night), light otherwise.
+   * A visitor's manual toggle overrides it.
+   */
+  themeSchedule: {
+    timeZone: "Asia/Kolkata",
+    darkFromHour: 18,
+    darkUntilHour: 6,
+    /** A manual toggle is remembered this long, then the clock takes over again. */
+    overrideHours: 12,
+  },
   /** Shown as NOW / PREVIOUSLY next to the bio. */
   now: { role: "Software Engineer", company: "Koko", url: "https://koko.vet" },
-  previously: { role: "SDE-1", company: "Axentia", url: "https://axentia.in" },
+  previously: { role: "Full Stack AI Engineer", company: "Axentia", url: "https://axentia.in" },
   links: {
     github: "https://github.com/shreeram312",
     x: "https://x.com/realshreeram312",

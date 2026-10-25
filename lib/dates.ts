@@ -38,5 +38,5 @@ export function formatDuration(months: number): string {
 }
 
 export function formatRange(start: MonthString, end: MonthOrPresent): string {
-  return `${formatMonth(start)} — ${formatMonth(end)}`;
+  return `${formatMonth(start)} – ${formatMonth(end)}`;
 }
