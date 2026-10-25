@@ -43,3 +43,7 @@ next-env.d.ts
 
 # local tooling
 /.claude/
+
+# pnpm 10+ writes this via `pnpm approve-builds`; Vercel runs pnpm 9 which rejects it.
+# Build-script approval lives in package.json#pnpm instead.
+pnpm-workspace.yaml
