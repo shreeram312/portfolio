@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Databuddy } from "@databuddy/sdk/react";
 import GoogleAnalytics from "@/components/google-analytics";
+import { ThemeProvider } from "@/components/theme-provider";
+import { profile } from "@/data/profile";
 
 import "./globals.css";
-import { Databuddy } from "@databuddy/sdk/react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,9 +17,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
-  title: "Shreeram Mutukundu ",
-  description: "Shreeram Mutukundu's Portfolio",
+  metadataBase: new URL(profile.siteUrl),
+  title: {
+    default: `${profile.name} — ${profile.roles[0]}`,
+    template: `%s — ${profile.name}`,
+  },
+  description: `${profile.name}'s portfolio. ${profile.roles[0]} from ${profile.location.city}, ${profile.location.country}.`,
   keywords: [
     "Shreeram Mutukundu",
     "Shreeram",
@@ -31,8 +44,12 @@ export const metadata: Metadata = {
     "realshreeram312",
     "AI Developer",
     "AI Engineer",
+    "Koko",
+    "koko.vet",
     "Axentia",
     "https://axentia.in",
+    "Transcript Genie",
+    "Clauseborne",
     "G.R.E.G",
     "RiskAssist",
     "Contentport",
@@ -40,11 +57,19 @@ export const metadata: Metadata = {
     "Contentport Platform",
   ],
   openGraph: {
-    title: "Shreeram Mutukundu",
-    description:
-      "Shreeram Mutukundu's Portfolio, Software Engineer from Pune, India",
-    url: "https://shreerammutukundu.in",
-    siteName: "Shreeram Mutukundu",
+    title: profile.name,
+    description: `${profile.name}'s portfolio, ${profile.roles[0]} from ${profile.location.city}, ${profile.location.country}`,
+    url: profile.siteUrl,
+    siteName: profile.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: profile.name,
+    creator: "@realshreeram312",
+  },
+  verification: {
+    google: "LUk-7gaPT_ZGvaIYkLOu_QAL7xD64rSRpJEUmS6C2_E",
   },
 };
 
@@ -54,29 +79,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <meta
-        name="google-site-verification"
-        content="LUk-7gaPT_ZGvaIYkLOu_QAL7xD64rSRpJEUmS6C2_E"
-      />
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Databuddy
-          clientId="u0syca9wZFhc8JqnnlZVp"
-          enableBatching={true}
-          // trackScreenViews={true} // Track page/route changes
-          trackPerformance={true} // Track loading times
-          trackWebVitals={true} // Track Core Web Vitals
-          trackErrors={true} // Track JavaScript errors
-          // Optional tracking (enable as needed)
-          // trackSessions={true} // Track user sessions
-          trackOutgoingLinks={false} // Track external link clicks
-          trackScrollDepth={false} // Track scroll behavior
-          // trackEngagement={false} // Track user engagement
-        />
-        <GoogleAnalytics />
-        {children}
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col overflow-x-hidden">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <Databuddy
+            clientId="u0syca9wZFhc8JqnnlZVp"
+            enableBatching={true}
+            trackPerformance={true}
+            trackWebVitals={true}
+            trackErrors={true}
+            trackOutgoingLinks={false}
+            trackScrollDepth={false}
+          />
+          <GoogleAnalytics />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

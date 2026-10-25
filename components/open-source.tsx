@@ -1,97 +1,87 @@
-import React from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { Card } from "@/components/ui/card";
+import { ArrowUpRight, GitPullRequest } from "lucide-react";
+import { openSource } from "@/data/open-source";
+import { Section } from "@/components/frame";
+import { GitHubIcon } from "@/components/icons";
 
-const OpenSource = () => {
+export function OpenSource() {
   return (
-    <div>
-      <div className="mb-8 sm:mb-12">
-        <h2 className="text-xl sm:text-2xl font-mono mb-2 text-white">
-          Open Source
-        </h2>
-        <p className="text-gray-400 mb-4 sm:mb-6 font-mono text-xs sm:text-sm">
-          My contributions to the community
-        </p>
-
-        <Card className="bg-black border border-gray-800 p-0 overflow-hidden hover:border-gray-600 transition-all duration-300 hover:shadow-lg hover:shadow-gray-900/50">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
-            {/* Image Section */}
-            <Link
-              href="https://contentport.io"
-              target="_blank"
-              className="lg:col-span-2"
-            >
-              <div className="relative w-full h-48 sm:h-56 lg:h-full bg-gray-900 overflow-hidden group">
-                <Image
-                  src="/image.png"
-                  alt="Contentport.io"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              </div>
-            </Link>
-
-            {/* Content Section */}
-            <div className="lg:col-span-3 p-5 sm:p-6">
-              <div className="mb-4">
-                <Link href="https://contentport.io" target="_blank">
-                  <h3 className="text-gray-100 font-mono font-medium text-lg sm:text-xl hover:text-blue-300 transition-colors mb-2">
-                    contentport.io
-                  </h3>
-                </Link>
-                <p className="text-gray-400 text-xs sm:text-sm mb-3">
-                  A content engine for growing on Twitter. Helps you create,
-                  schedule and manage twitter content at scale.
-                </p>
-                <p className="text-gray-500 text-xs font-mono">
-                  Open Source Contribution
-                </p>
-              </div>
-
-              {/* Contributions List */}
-              <div className="space-y-3 mb-4">
-                <div className="flex items-start gap-2">
-                  <span className="text-gray-400 text-xs mt-1">•</span>
-                  <p className="text-gray-300 text-xs sm:text-sm">
-                    Added server component functionality and fixed
-                    authentication redirects for seamless user experience
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <span className="text-gray-400 text-xs mt-1">•</span>
-                  <p className="text-gray-300 text-xs sm:text-sm">
-                    Enhanced tweet posting with comprehensive edge case handling
-                    and error validation
-                  </p>
-                </div>
-
-                <div className="flex items-start gap-2">
-                  <span className="text-gray-400 text-xs mt-1">•</span>
-                  <p className="text-gray-300 text-xs sm:text-sm">
-                    Implemented UI/UX improvements for better interface
-                    consistency
-                  </p>
-                </div>
-              </div>
-
-              {/* GitHub Link */}
+    <Section id="open-source" title="Open Source" action={<span>contributions</span>}>
+      <div className="space-y-4">
+        {openSource.map((entry) => (
+          <article
+            key={entry.repo}
+            className="grid overflow-hidden rounded-xl border border-line bg-surface sm:grid-cols-[220px_1fr]"
+          >
+            {entry.image ? (
               <a
-                href="https://github.com/joschan21/contentport"
+                href={entry.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors text-xs sm:text-sm font-mono"
+                className="group relative block aspect-[16/9] overflow-hidden border-b border-line bg-surface-2 sm:aspect-auto sm:border-b-0 sm:border-r"
               >
-                View on GitHub →
+                <Image
+                  src={entry.image}
+                  alt={entry.name}
+                  fill
+                  sizes="(max-width: 640px) 100vw, 220px"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                />
               </a>
-            </div>
-          </div>
-        </Card>
-      </div>
-    </div>
-  );
-};
+            ) : null}
 
-export default OpenSource;
+            <div className="p-4 sm:p-5">
+              <div className="flex items-start justify-between gap-3">
+                <div>
+                  <h3 className="font-medium leading-tight">
+                    <a
+                      href={entry.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 transition-colors hover:text-brand"
+                    >
+                      {entry.name}
+                      <ArrowUpRight className="size-3.5 text-muted-foreground" />
+                    </a>
+                  </h3>
+                  <p className="mt-0.5 font-mono text-[11px] text-muted-foreground">{entry.repo}</p>
+                </div>
+                <a
+                  href={entry.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${entry.name} on GitHub`}
+                  className="inline-flex size-7 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-surface-2 hover:text-foreground"
+                >
+                  <GitHubIcon className="size-4" />
+                </a>
+              </div>
+
+              <p className="mt-2 text-sm text-muted-foreground">{entry.description}</p>
+
+              <ul className="mt-4 space-y-2">
+                {entry.contributions.map((c) => (
+                  <li key={c.title} className="flex items-start gap-2.5 text-sm">
+                    <GitPullRequest className="mt-[3px] size-3.5 shrink-0 text-success" />
+                    {c.url ? (
+                      <a
+                        href={c.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors hover:text-brand"
+                      >
+                        {c.title}
+                      </a>
+                    ) : (
+                      <span>{c.title}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        ))}
+      </div>
+    </Section>
+  );
+}
