@@ -10,7 +10,7 @@ const statusLabel: Record<NonNullable<Project["status"]>, { label: string; dot: 
   archived: { label: "Archived", dot: "bg-line-strong" },
 };
 
-export function ProjectCard({ project, index }: { project: Project; index: number }) {
+export function ProjectCard({ project }: { project: Project }) {
   const href = project.url ?? project.github;
   const status = project.status ? statusLabel[project.status] : null;
 
@@ -40,23 +40,6 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           </div>
         )}
 
-        {/* Viewfinder overlay on hover */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-        >
-          <div className="absolute inset-2 border border-brand/80 ring-1 ring-brand/20" />
-          <span className="absolute left-3 top-3 h-3 w-3 border-l-2 border-t-2 border-brand" />
-          <span className="absolute right-3 top-3 h-3 w-3 border-r-2 border-t-2 border-brand" />
-          <span className="absolute bottom-3 left-3 h-3 w-3 border-b-2 border-l-2 border-brand" />
-          <span className="absolute bottom-3 right-3 h-3 w-3 border-b-2 border-r-2 border-brand" />
-          <span className="absolute left-5 top-4 font-mono text-[9px] uppercase tracking-widest text-brand drop-shadow-sm">
-            ● rec · {String(index + 1).padStart(2, "0")}
-          </span>
-          <span className="absolute bottom-4 right-5 font-mono text-[9px] uppercase tracking-widest text-brand drop-shadow-sm">
-            {project.stack.length} deps
-          </span>
-        </div>
       </a>
 
       {/* Body */}
