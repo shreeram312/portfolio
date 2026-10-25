@@ -29,7 +29,7 @@ export const profile = {
   cover: "https://wallpapershome.com/images/pages/pic_h/8164.jpg",
   resume:
     "https://drive.google.com/file/d/1LC59qeT7ymWzy_zZXiIIeDW9c0Abi9oC/view?usp=sharing",
-  siteUrl: "https://shreerammutukundu.in",
+  siteUrl: "https://iamshreeram.dev",
   availability: {
     available: true,
     label: "Available for new opportunities",
