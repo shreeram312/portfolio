@@ -59,7 +59,8 @@ export function Experience() {
               className="rounded-xl border border-line bg-surface p-4 sm:p-5"
             >
               {/* Company header */}
-              <header className="flex items-start justify-between gap-4">
+              {/* Company header: stacks on phones, two columns from sm up */}
+              <header className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 min-w-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-line bg-white px-1.5">
                     {entry.logo ? (
@@ -92,9 +93,6 @@ export function Experience() {
                         entry.company
                       )}
                     </h3>
-                    {entry.tagline ? (
-                      <p className="mt-0.5 text-xs text-muted-foreground">{entry.tagline}</p>
-                    ) : null}
                     {entry.location ? (
                       <p className="mt-0.5 inline-flex items-center gap-1 text-xs text-muted-foreground">
                         <MapPin className="size-3" />
@@ -103,9 +101,11 @@ export function Experience() {
                     ) : null}
                   </div>
                 </div>
-                <div className="shrink-0 text-right font-mono text-[11px] text-muted-foreground">
+
+                {/* Dates: one row on phones, stacked right-aligned from sm up */}
+                <div className="flex items-center justify-between gap-3 font-mono text-[11px] text-muted-foreground sm:shrink-0 sm:flex-col sm:items-end sm:justify-start sm:gap-0.5">
                   <p>{span.range}</p>
-                  <p className="mt-0.5">
+                  <p>
                     <span
                       className={
                         span.current
@@ -118,6 +118,12 @@ export function Experience() {
                   </p>
                 </div>
               </header>
+
+              {entry.tagline ? (
+                <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:pl-[52px]">
+                  {entry.tagline}
+                </p>
+              ) : null}
 
               {/* Roles thread */}
               <ol className="relative mt-5 space-y-6 border-l border-dashed border-line pl-5 sm:ml-5 sm:pl-6">
