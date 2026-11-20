@@ -3,8 +3,6 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import { Databuddy } from "@databuddy/sdk/react";
 import GoogleAnalytics from "@/components/google-analytics";
 import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeBootScript } from "@/components/theme-boot-script";
-import { scheduledTheme } from "@/lib/theme-schedule";
 import { profile } from "@/data/profile";
 
 import "./globals.css";
@@ -86,13 +84,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
-      <head>
-        <ThemeBootScript />
-      </head>
       <body className="flex min-h-full flex-col overflow-x-hidden">
         <ThemeProvider
           attribute="class"
-          defaultTheme={scheduledTheme()}
+          defaultTheme="dark"
           enableSystem={false}
           disableTransitionOnChange
         >
